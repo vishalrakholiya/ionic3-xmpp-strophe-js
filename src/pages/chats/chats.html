@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Chats</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="openModal()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item detail-push *ngFor="let chat of chats" (click)="chatDetail(chat.id, chat.name)" >
+      <ion-avatar item-start>
+        <img src="{{chat.avata}}">
+      </ion-avatar>
+      <h2>{{chat.name}}</h2>
+      <p>{{chat.lastText}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
